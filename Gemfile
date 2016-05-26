@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 # Use sqlite3 as the database for Active Record
-
+gem 'pry'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -47,6 +47,10 @@ group :development do
 	gem 'pg'
 	gem 'rails_12factor'
   gem 'web-console'
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'guard-rails'
+  gem 'guard-bundler'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   
   gem 'listen', '~> 3.0.5'
