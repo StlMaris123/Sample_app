@@ -31,11 +31,12 @@ end
 test "should get resume" do
   get :resume
   assert_response  :success
-  assert_select "h3", "Academic Qualification"
+  assert_select "h2", "Academic Qualification"
   assert_select "title", "Resume | #{@base_title}"
-  assert_select "td", "Maseno University- Maseno Kenya"
-  assert_select "h4", "Community engagement."
-  assert_select "td", "year"
+  assert_select "h3", "Maseno University- Maseno Kenya"
+  assert_select "p", "Bsc. Mathematics and Computer Science"
+  assert_select "h3", "Skills"
   assert_select "li", "Java"
+  assert_select "li", "Ruby"
 end
 end
