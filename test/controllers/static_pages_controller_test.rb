@@ -28,4 +28,14 @@ test "should get contact" do
 	assert_select "title", "Contact | #{@base_title}"
 	assert_select "p", "Its lunch time!"
 end
+test "should get resume" do
+  get :resume
+  assert_response  :success
+  assert_select "h3", "Academic Qualification"
+  assert_select "title", "Resume | #{@base_title}"
+  assert_select "td", "Maseno University- Maseno Kenya"
+  assert_select "h4", "Community engagement."
+  assert_select "td", "year"
+  assert_select "li", "Java"
+end
 end
