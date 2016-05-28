@@ -45,7 +45,7 @@ group :test do
 end
 
 group :development do
-	gem 'pg'
+	
 	gem 'rails_12factor'
   gem 'web-console'
   gem 'guard'
@@ -62,3 +62,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :develpment do
+  gem 'pg'
+end
