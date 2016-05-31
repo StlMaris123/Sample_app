@@ -33,4 +33,11 @@ invalid_addresses.each do |invalid_address|
 assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
 end
 end
-end 
+test "email address should be unique" do
+	duplicate_user = @user.dup
+	duplicate_user.email = @user.email.upcase
+	@user.save
+	assert_not duplicate_user.valid?
+end
+end
+
