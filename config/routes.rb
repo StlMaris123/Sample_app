@@ -5,4 +5,5 @@ get 'about' => 'static_pages#about'
 get 'contact' => 'static_pages#contact'
 get 'resume' => 'static_pages#resume'
 get 'signup' => 'users#new'
+resources :users
 end
