@@ -3,19 +3,6 @@
 /* mixins, variables, etc */
 $gray-medium-light: #eaeaea;
 /* universal */
-@mixin box_sizing {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-/* miscelleneous */
-.debug_dump{
-	clear: both;
-	float: left;
-	width: 100%;
-	margin-top: 45px;
-	@include box_sizing;
-}
 body {
 	padding-top: 60px;
 }
@@ -31,6 +18,23 @@ text-align: center;
 margin-bottom: 10px;
 }
 }
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* miscelleneous */
+.debug_dump{
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
+}
+
+
+
+
 /*typography */
 h1, h2, h3, h4, h5, h6 {
 line-height: 1;
