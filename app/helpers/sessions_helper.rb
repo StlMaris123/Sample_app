@@ -26,8 +26,15 @@ end
 def logged_in?
 	!current_user.nil?
 end
+#forgets a persistent session
+def forget(user)
+	user.forget
+	cookies.delete(:user_id)
+	cookies.delete(:rememeber_token)
+end
 #logs out the current user
 def log_out
+	forget(current_user)
 	session.delete(:user_id)
 	@current_user = nil
 end
