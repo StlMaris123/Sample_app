@@ -25,7 +25,8 @@ end
 def update
   @user = User.find(params[:id])
   if @user.update_attributes(user_params)
-    #handle a successful update
+    flash[:success] = "profile updated"
+    redirect_to @user
   else
     render 'edit'
   end
