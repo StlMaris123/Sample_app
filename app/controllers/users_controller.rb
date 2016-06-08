@@ -21,11 +21,9 @@ end
 end
 
 def edit
-@user = User.find_by(id: params[:id]) 
 end
 
 def update
-  @user = User.find_by(id: params[:id])
   if @user.update_attributes(user_params)
     flash[:success] = "profile updated"
     redirect_to @user
@@ -41,6 +39,7 @@ private
   #before filters
   def logged_in_user
     unless logged_in?
+      store_location
       flash[:danger] = "please log in."
       redirect_to login_url
 end

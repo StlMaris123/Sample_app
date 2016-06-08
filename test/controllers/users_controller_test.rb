@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
 	def setup
-		@user = users(:michael)
+		@user       = users(:michael)
 		@other_user = users(:archer)
 	end
 
@@ -26,7 +26,7 @@ class UsersControllerTest < ActionController::TestCase
   	assert flash.empty?
   	assert_redirected_to root_url
   end
-  test "should redirect update when looged in as wrong user" do
+  test "should redirect update when loged in as wrong user" do
   	log_in_as(@other_user)
   	patch :update, id: @user, user: { name: @user.name, email: @user.email }
   	assert flash.empty?
