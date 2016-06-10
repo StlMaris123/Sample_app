@@ -49,13 +49,13 @@ private
   	params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
   #before filters
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "please log in."
-      redirect_to login_url
-end
-end
+  #def logged_in_user
+    #unless logged_in?
+      #store_location
+      #flash[:danger] = "please log in."
+      #redirect_to login_url
+#end
+#end
 #confirms the correct user
 def correct_user
   @user = User.find(params[:id])
