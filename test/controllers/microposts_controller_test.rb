@@ -7,14 +7,14 @@ end
 
 test "should redirect create when not logged in" do 
 assert_no_difference 'Micropost.count' do 
-	post microposts_path, micropost: { content: "wawawa" }
+	post microposts_path  :create, micropost: { content: "wawawa" }
 end
 assert_redirected_to login_url
 end
 
 test "should redirect destroy when not logged in" do
 	assert_no_difference 'Micropost.count' do
-		delete micropost_path, id: @micropost
+		delete micropost_path :destroy, id: @micropost
 	end
 	assert_redirected_to login_url
 end
