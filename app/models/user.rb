@@ -65,6 +65,17 @@ def feed
 	Micropost.where("user_id = ? ", id)
 end
 
+#activate an account
+def activate
+	update_attribute(:activated,   true)
+	update_attribute(:activated_at, Time.zone.now)
+end
+
+#sends activation email
+def send_activation_email
+	UserMailer.account_activation(self).deliver_now
+end
+
 private
 
 #converts email to all-case
