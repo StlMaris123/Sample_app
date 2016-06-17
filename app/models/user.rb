@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-	has_many       :microposts, dependent: :destroy
-	has_many       :active_relationships, class_name:   "Relationship",
+	has_many  :microposts, dependent: :destroy
+	has_many  :active_relationships, class_name:   "Relationship",
 											foreign_key: "follower_id",
 											dependent:   :destroy
 	has_many :passive_relationships, class_name: "Relationship",
@@ -70,7 +70,11 @@ def forget
 end
 
 def feed
-	Micropost.where("user_id = ? ", id)
+	Micropost.where("user_id = ?", id)
+	#following_ids = "SELECT followed_id FROM relationships 
+					 #WHERE follower_id = :user_id"
+	#Micropost.where("user_id IN (#{following_ids})
+					#OR user_id = :user_id", user_id: id)
 end
 
 #activate an account
