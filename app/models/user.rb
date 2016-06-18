@@ -118,10 +118,10 @@ end
 
 private
 
-#converts email to all-case
-def downcase_email
-	self.email = email.downcase
-end
+# #converts email to all-case
+# def downcase_email
+# 	self.email = email.downcase
+# end
 
 #creates and assigns the activation token and digest
 def create_activation_digest
