@@ -79,7 +79,7 @@ end
 test "feed should have the right posts " do
 	michael = users(:michael)
 	archer  = users(:archer)
-	lana    = sers(:lana)
+	lana    = users(:lana)
 	#posts from followed user
 	lana.microposts.each do |post_following| 
 		assert michael.feed.include?(post_following)
